@@ -212,49 +212,8 @@ This makes the project more aligned with real-world grid operations and utility-
 
 ---
 
-# 📂 Project Structure
 
-```bash
-GridSage-AI/
-│
-├── data/
-│   └── synthetic_electricity_demand.csv
-│
-├── notebooks/
-│   └── GridSage_AI.ipynb
-│
-├── results/
-│   ├── graphs/
-│   └── evaluation_tables/
-│
-├── paper/
-│   └── GridSage_AI_Research_Paper.pdf
-│
-├── README.md
-└── requirements.txt
-```
 
----
-
-# 📌 Research Contributions
-
-### 🔹 Hybrid Residual Learning Framework
-
-Combines deep temporal learning with structured nonlinear correction.
-
-### 🔹 Utility-Oriented Evaluation
-
-Focuses not only on prediction accuracy but also operational energy impact.
-
-### 🔹 Robustness Under Extreme Events
-
-Simulates realistic grid stress conditions including demand spikes and volatility.
-
-### 🔹 Peak-Hour Reliability
-
-Evaluates forecasting performance during high-stress evening demand periods.
-
----
 
 # 🔮 Future Improvements
 
@@ -270,22 +229,7 @@ Possible future extensions include:
 
 ---
 
-# 👨‍💻 Team
-
-* Vansh Baraswal
-* Hitesh Verma
-* Alok Kumar Gujar
-* Nitesh Shrivas
-* Satyam Tripathi
-* Suryansh Kesarwani
-
-Harcourt Butler Technical University (HBTU), Kanpur
-
 ---
-
-# 📜 License
-
-This project is developed for academic research, learning, and hackathon purposes.
 
 ---
 
