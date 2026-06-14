@@ -2,45 +2,176 @@
 
 ### AI-Powered Hybrid Smart Grid Electricity Demand Forecasting System
 
-GridSageAI is a research-oriented hybrid AI framework designed for intelligent electricity demand forecasting in modern smart-grid environments using deep learning and machine learning.
-
-The system combines:
-
-* LSTM (Long Short-Term Memory) networks for temporal forecasting
-* XGBoost residual learning for nonlinear error correction
-
-to improve:
-
-* forecasting accuracy
-* operational grid stability
-* peak-hour prediction
-* and cumulative energy allocation efficiency.
+GridSageAI is a research-oriented hybrid AI framework for intelligent electricity demand forecasting in smart-grid environments. It combines **LSTM** for temporal sequence learning with **XGBoost residual learning** for nonlinear error correction to improve forecasting accuracy, peak-hour stability, and operational energy efficiency.
 
 ---
 
-# Vision
+## Overview
 
-Modern electrical grids require highly accurate forecasting systems to:
+Electricity demand forecasting is essential for reliable power-system planning and operation. In large-scale grids, even small forecasting errors can accumulate into significant energy misallocation, higher operational cost, and grid stress during peak-demand periods.
 
-* balance electricity generation and demand,
-* reduce operational inefficiencies,
-* integrate renewable energy,
-* and improve smart-grid stability.
+GridSageAI is designed to reduce these risks by learning:
+- long-range temporal patterns,
+- daily and seasonal demand cycles,
+- temperature-driven load variation,
+- and structured residual errors left by the base model.
 
-GridSageAI was developed as a scalable AI-based forecasting framework capable of adapting across:
-
-* microgrids,
-* smart cities,
-* industrial zones,
-* utility regions,
-* and large-scale national power systems.
+The project uses a hybrid architecture to improve both point-wise accuracy and real-world operational usefulness.
 
 ---
 
-# Why GridSageAI?
+## Why GridSageAI?
 
-Traditional forecasting systems often struggle with:
+Traditional forecasting models often struggle with:
+- nonlinear demand behavior,
+- sudden spikes,
+- seasonal shifts,
+- and peak-hour stress.
 
+Standalone deep learning models can capture temporal structure well, but they may still leave systematic forecasting errors. GridSageAI solves this by adding a residual correction stage, where XGBoost learns the remaining error after LSTM prediction.
+
+This makes the system more robust for deployment-oriented electricity forecasting.
+
+---
+
+## Key Features
+
+- Multivariate electricity demand forecasting
+- Hourly smart-grid demand simulation
+- LSTM temporal sequence modeling
+- XGBoost residual correction
+- Peak-hour forecasting evaluation
+- Energy misallocation analysis
+- Research-style metric reporting
+- Scalable design for multiple grid sizes
+
+---
+
+## System Architecture
+
+**Input Features**  
+Historical demand, temperature, and cyclical time encodings
+
+**Preprocessing**  
+Scaling, sequence generation, and time-aware train-test split
+
+**Stage 1: LSTM Forecasting**  
+Learns demand trends, daily cycles, and seasonal structure
+
+**Stage 2: Residual Learning**  
+XGBoost learns the remaining forecast error
+
+**Final Output**  
+Hybrid prediction = LSTM forecast + residual correction
+
+---
+
+## Dataset and Preprocessing
+
+The project uses a synthetic **10-year hourly electricity demand dataset** designed to emulate realistic grid behavior. The dataset includes:
+- nonlinear long-term growth,
+- daily usage cycles,
+- seasonal variation,
+- temperature effects,
+- random fluctuations,
+- and rare extreme events.
+
+A chronological split is used so the final year is reserved for testing, preserving realistic forecasting conditions. Inputs are normalized using MinMax scaling, and a 24-hour sliding window is used to create multivariate sequences.
+
+---
+
+## Evaluation Metrics
+
+GridSageAI is evaluated using both standard and operational metrics:
+
+- MAE
+- RMSE
+- MAPE
+- SMAPE
+- NRMSE
+- R² Score
+- 95th Percentile Error
+- Maximum Error
+- Peak-Hour MAE
+- Annual Energy Misallocation (GWh)
+
+These metrics help measure not only average accuracy but also performance during critical load periods and cumulative operational impact.
+
+---
+
+## Results Summary
+
+The hybrid model outperforms both the heuristic baseline and standalone LSTM on the test year.
+
+### Reported test results
+- **Hybrid MAE:** 244.40 MW  
+- **Hybrid RMSE:** 329.78 MW  
+- **Hybrid Peak-Hour MAE:** 243.91 MW  
+- **Hybrid Energy Misallocation:** 2140.94 GWh/year  
+
+Compared with the standalone LSTM, the hybrid model improves:
+- average error,
+- peak-hour stability,
+- and annual energy misallocation.
+
+Compared with the heuristic baseline, the improvement is substantially larger.
+
+---
+
+## Current Applications
+
+- Smart-grid demand forecasting
+- Utility load balancing
+- Peak-hour power planning
+- Reserve scheduling
+- Industrial electricity optimization
+
+---
+
+## Future Applications
+
+- Renewable energy integration
+- Real-time adaptive forecasting
+- IoT-based grid intelligence
+- AI-assisted national smart grids
+- Autonomous energy optimization systems
+
+---
+
+## Why the Hybrid Model Is Stronger
+
+### Standalone LSTM
+Good at learning temporal patterns, but may miss structured nonlinear errors and spike behavior.
+
+### Hybrid LSTM + XGBoost
+Adds a correction stage that learns residual error patterns, improving robustness during peak demand and reducing cumulative forecasting error.
+
+This makes the hybrid version more suitable for real-world grid operation.
+
+---
+
+## Tech Stack
+
+- Python
+- PyTorch
+- XGBoost
+- NumPy
+- Pandas
+- Matplotlib
+- Scikit-learn
+- Streamlit
+
+---
+
+## Project Structure
+
+```text
+GridSageAI/
+│
+├── GridSageAI.ipynb
+├── app.py
+├── README.md
+└── requirements.txt
 * nonlinear demand behavior,
 * sudden demand spikes,
 * seasonal fluctuations,
